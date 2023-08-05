@@ -1,0 +1,7 @@
+# default threshold for AFK/back callbacks to be triggered.
+# in seconds.
+afk_api:default_afk_time (default AFK time) float 300 0
+
+# how often to check whether a player's state (position, look direction, keys pressed) has changed.
+# in seconds.
+afk_api:check_state_period (check state period) float 1

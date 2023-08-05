@@ -1,0 +1,11 @@
+{
+    "type": "MOD",
+    "name": "afk_api",
+    "title": "afk_api",
+    "license": "LGPL-3.0-or-later",
+    "media_license": "CC-BY-SA-4.0",
+    "repo": "https://github.com/fluxionary/minetest-afk_api.git",
+    "website": "https://github.com/fluxionary/minetest-afk_api",
+    "issue_tracker": "https://github.com/fluxionary/minetest-afk_api/issues",
+    "short_description": "an API for registering events which trigger when a player goes AFK or comes back from AFK."
+}
