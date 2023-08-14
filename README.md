@@ -35,8 +35,16 @@ afk_api.register_on_back({
   the current time will be used. if the first argument is not a valid player or the player is not connected, this
   will return `nil`.
 
-* `afk_api.is_afk(player_or_name[, min_afk_time][, now])`
+* `afk_api.is_afk(player_or_name[, min_afk_time[, now]])`
 
   check whether a player is AFK. returns `true` if they are, `false` if they are not, or `nil` if the argument is
   not a valid connected player. if `min_afk_time` is not specified or `nil`, the default_afk_time setting will be
   used. `now` is the same as in `afk_api.get_afk_time()`
+
+* `afk_api.get_afk_players([min_afk_time[, now]])`
+
+  get a list of players who are AFK
+
+* `afk_api.get_non_afk_players([min_afk_time[, now]])`
+
+  get a list of players who are *not* AFK
