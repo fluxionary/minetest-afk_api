@@ -98,7 +98,7 @@ function afk_api.get_afk_time(player_or_name, now)
 	local player_name
 	if type(player_or_name) == "string" then
 		player_name = player_or_name
-	elseif minetest.is_player(player_or_name) then
+	elseif futil.is_player(player_or_name) then
 		player_name = player_or_name:get_player_name()
 	else
 		return

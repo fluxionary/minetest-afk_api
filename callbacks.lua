@@ -32,31 +32,31 @@ minetest.register_on_leaveplayer(function(player)
 end)
 
 minetest.register_on_placenode(function(pos, newnode, placer, oldnode, itemstack, pointed_thing)
-	if minetest.is_player(placer) then
+	if futil.is_player(placer) then
 		afk_api.back(placer)
 	end
 end)
 
 minetest.register_on_dignode(function(pos, oldnode, digger)
-	if minetest.is_player(digger) then
+	if futil.is_player(digger) then
 		afk_api.back(digger)
 	end
 end)
 
 minetest.register_on_punchnode(function(pos, node, puncher, pointed_thing)
-	if minetest.is_player(puncher) then
+	if futil.is_player(puncher) then
 		afk_api.back(puncher)
 	end
 end)
 
 minetest.register_on_rightclickplayer(function(player, clicker)
-	if minetest.is_player(clicker) then
+	if futil.is_player(clicker) then
 		afk_api.back(clicker)
 	end
 end)
 
 minetest.register_on_cheat(function(player, cheat)
-	if minetest.is_player(player) then
+	if futil.is_player(player) then
 		afk_api.back(player)
 	end
 end)
@@ -76,19 +76,19 @@ table.insert(minetest.registered_on_chatcommands, 1, function(name, command, par
 end)
 
 table.insert(minetest.registered_on_player_receive_fields, 1, function(player, formname, fields)
-	if minetest.is_player(player) then
+	if futil.is_player(player) then
 		afk_api.back(player)
 	end
 end)
 
 table.insert(minetest.registered_on_crafts, 1, function(itemstack, player, old_craft_grid, craft_inv)
-	if minetest.is_player(player) then
+	if futil.is_player(player) then
 		afk_api.back(player)
 	end
 end)
 
 minetest.register_on_player_inventory_action(function(player, action, inventory, inventory_info)
-	if minetest.is_player(player) then
+	if futil.is_player(player) then
 		afk_api.back(player)
 	end
 end)
@@ -104,14 +104,14 @@ table.insert(
 	minetest.registered_on_item_eats,
 	1,
 	function(hp_change, replace_with_item, itemstack, eater, pointed_thing)
-		if minetest.is_player(eater) then
+		if futil.is_player(eater) then
 			afk_api.back(eater)
 		end
 	end
 )
 
 table.insert(minetest.registered_on_item_pickups, 1, function(itemstack, picker, pointed_thing, time_from_last_punch)
-	if minetest.is_player(picker) then
+	if futil.is_player(picker) then
 		afk_api.back(picker)
 	end
 end)
