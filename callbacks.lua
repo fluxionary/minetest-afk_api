@@ -75,10 +75,14 @@ table.insert(minetest.registered_on_chatcommands, 1, function(name, command, par
 	end
 end)
 
-table.insert(minetest.registered_on_player_receive_fields, 1, function(player, formname, fields)
-	if futil.is_player(player) then
-		afk_api.back(player)
-	end
+-- registered_on_player_receive_fields is iterated in reverse order, so we have to wait until everything is loaded
+-- and then attach ourselves to the end of the list
+minetest.register_on_mods_loaded(function()
+	table.insert(minetest.registered_on_player_receive_fields, function(player, formname, fields)
+		if futil.is_player(player) then
+			afk_api.back(player)
+		end
+	end)
 end)
 
 table.insert(minetest.registered_on_crafts, 1, function(itemstack, player, old_craft_grid, craft_inv)

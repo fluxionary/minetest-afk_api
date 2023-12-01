@@ -138,13 +138,13 @@ function afk_api.get_non_afk_players(min_afk_time, now)
 	min_afk_time = min_afk_time or s.default_afk_time
 	now = now or get_us_time() / 1e6
 	local players = minetest.get_connected_players()
-	local afk_players = {}
+	local non_afk_players = {}
 	for i = 1, #players do
 		local player = players[i]
 		local afk_time = afk_api.get_afk_time(player, now)
 		if not afk_time or afk_time < min_afk_time then
-			afk_players[#afk_players + 1] = player
+			non_afk_players[#non_afk_players + 1] = player
 		end
 	end
-	return afk_players
+	return non_afk_players
 end
