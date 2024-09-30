@@ -10,8 +10,6 @@ afk_api.registered_on_backs = {}
 
 function afk_api.get_player_state(player)
 	return {
-		player:get_attach() and "attached" or player:get_pos(),
-		player:get_velocity(),
 		player:get_wield_index(),
 		player:get_look_dir(),
 		player:get_player_control_bits(),
